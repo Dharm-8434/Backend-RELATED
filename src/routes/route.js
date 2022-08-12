@@ -118,4 +118,24 @@ let pla = players;
     
 })
 
+
+let person = []
+
+   router.post("/person" , function(req, res){
+        // let agw= req.body.age;
+        let check = req.body
+        for(let i=0;i<check.length;i++){
+           if(check[i].age >=18){
+            check[i].votingstatus = true;
+            person.push(check[i]);
+           } else{
+            person.push(check[i]);
+           }
+        }
+        res.send({msg:[person]})
+        
+    })
+    
+
+
 module.exports = router;
