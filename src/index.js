@@ -7,9 +7,9 @@ const moment = require('moment');
 const time = moment();
 app.use(
     function(req,res,next){
-        console.log("global")
+        //console.log("global")
         console.log(time.format('MMMM Do YYYY, h:mm:ss a'))
-        console.log(time.format("LTS"))
+        //console.log(time.format("LTS"))
         console.log(req.ip)
         console.log(req.url)
         next()
