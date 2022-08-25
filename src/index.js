@@ -3,6 +3,19 @@ const bodyParser = require('body-parser');
 const route = require('./routes/route.js');
 const { default: mongoose } = require('mongoose');
 const app = express();
+const moment = require('moment');
+const time = moment();
+app.use(
+    function(req,res,next){
+        console.log("global")
+        console.log(time.format('MMMM Do YYYY, h:mm:ss a'))
+        console.log(time.format("LTS"))
+        console.log(req.ip)
+        console.log(req.url)
+        next()
+    }
+)
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -20,6 +33,7 @@ app.use (
         next();
   }
   );
+
 
 app.use('/', route);
 
