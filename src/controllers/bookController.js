@@ -61,7 +61,13 @@ const totalSalesPerAuthor = async function (req, res) {
     res.send({ msg: allAuthorSales })
 }
 
+const DateandIP  = async function(req, res){
 
+let data = getRouteValueAt(0)
+
+res.send({msg:data});
+
+}
 
 
 // CRUD OPERATIONS:
@@ -71,7 +77,7 @@ const totalSalesPerAuthor = async function (req, res) {
 // DELETE
 
 
-
+module.exports.DateandIP = DateandIP
 module.exports.createBook = createBook
 module.exports.getBooksData = getBooksData
 module.exports.updateBooks = updateBooks

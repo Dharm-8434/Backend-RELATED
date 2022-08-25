@@ -1,5 +1,8 @@
 const express = require('express');
 const router = express.Router();
+var ip = require("ip");
+console.log(ip.address());
+console.log(Date.now())
 // const UserModel= require("../models/userModel.js")
 const UserController= require("../controllers/userController")
 const BookController= require("../controllers/bookController")
@@ -14,7 +17,7 @@ router.get("/test-me", function (req, res) {
 
 router.post("/createBook", BookController.createBook  )
 
-
+router.get("/finddateandip", commonMW.mid5,BookController.DateandIP)
 
 
 // router.post("/createUser", UserController.createUser  )
