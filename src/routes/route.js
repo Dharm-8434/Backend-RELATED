@@ -10,7 +10,6 @@ router.post("/users", userCo.createUser  )
 
 router.post("/login", userCo.loginUser)
 
-//The userId is sent by front end
 router.get("/users/:userId", userCo.getUserData)
 
 router.put("/users/:userId", userCo.updateUser)
