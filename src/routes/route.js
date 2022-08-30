@@ -1,17 +1,17 @@
 const express = require('express');
 const router = express.Router();
-const userco= require("../controllers/userController")
+const userController= require("../controllers/userController")
 
 router.get("/test-me", function (req, res) {
     res.send("My first ever api!")
 })
 
-router.post("/users", userCo.createUser  )
+router.post("/users", userController.createUser  )
 
-router.post("/login", userCo.loginUser)
+router.post("/login", userController.loginUser)
 
-router.get("/users/:userId", userCo.getUserData)
+router.get("/users/:userId", userController.getUserData)
 
-router.put("/users/:userId", userCo.updateUser)
+router.put("/users/:userId", userController.updateUser)
 
 module.exports = router;

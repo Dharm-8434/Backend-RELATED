@@ -3,11 +3,15 @@ const userModel = require("../models/userModel");
 
 
 const createUser = async function (abcd, xyz) {
- 
+ try{
   let data = abcd.body;
   let savedData = await userModel.create(data);
   console.log(abcd.newAtribute);
   xyz.send({ msg: savedData });
+ }
+ catch(err){
+  res.status(500).send({msg:err,data:"this is error data"})
+ }
 };
 
 const loginUser = async function (req, res) {
